@@ -11,7 +11,7 @@ import (
 
 func builder(i int, name string) {
 	fmt.Printf("生成　%d　中。。。\n", i)
-	cmd := exec.Command(name)
+	cmd := exec.Command(name, strconv.Itoa(i))
 	stdout, err := os.OpenFile(strconv.Itoa(i)+".in", os.O_RDWR|os.O_CREATE, 0755)
 	if err != nil {
 		log.Fatalln(err)
